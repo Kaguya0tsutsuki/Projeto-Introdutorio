@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='UTF-8'>
+    <title>TAREFA LIST</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='stylesheet.css'>
+</head>
+
+<body background="./fundo.jpg">
+
+    <div class="container">
+
+        <div class="tarefa">
+
+            <h1 class="titulo">TAREFA</h1>
+
+            <input id="nomeTarefa" class="input" type="text" placeholder="Nome da Tarefa">
+            <input id="descricaoTarefa" class="input" type="text" placeholder="Descrição">
+            <input id="dataTerminoTarefa" class="input" type="text" placeholder="Data de Término">
+            <input id="prioridadeTarefa" class="input" type="number" placeholder="Prioridade">
+            <input id="categoriaTarefa" class="input" type="text" placeholder="Categoria">
+            <input id="statusTarefa" class="input" type="text" placeholder="Status">
+            
+            <button id="criar" class="button">Criar</button>
+            <button id="limpar" class="button">Deletar Lista</button>
+	        <button id="listar" class="button">Listar</button>
+	        <button id="listar_uma_tarefa" class="button">Listar uma Tarefa</button>
+            <button id="modificar">Modificar Tarefa</button>
+
+        </div>
+
+        <div class="tarefa_list">
+            
+             <h1 class="titulo"> LISTA DE TAREFAS</h1>
+             <hr></hr>
+
+             <div class="tarefa_dados">
+                 <div id="nome"><p>Nome</p></div>
+                 <div id="descricao"><p>Descrição</p></div>
+                 <div id="dataTermino"><p>Data de Término</p></div>
+                 <div id="prioridade"><p>Prioridade</p></div>
+                 <div id="categoria"><p>Categoria</p></div>
+                 <div id="status"><p>Status</p></div>
+             </div>
+
+             <div class="lista_tarefa"></div>
+        </div>
+    </div>
+<script src="./app.js" type="module"></script>
+</body>
+</html>
