@@ -29,6 +29,12 @@ function criarTarefa(){
 
     let x = 0;
 
+    if(nomeTarefa.value === ""){
+        descricaoTarefa.value = "";
+        alert("Nome não Informado!");
+        return ;
+    }
+
     while(x < tarefa.length){
         
         if(nomeTarefa.value === tarefa[x][0]){
@@ -36,14 +42,33 @@ function criarTarefa(){
             alert("Nome Inválido!");
             x = 0;
             return;
-
         }
         x++;      
     }
 
-    if(prioridadeTarefa.value < 1 || prioridadeTarefa.value > 5){
+    if(descricaoTarefa.value === ""){
+        descricaoTarefa.value = "";
+        alert("Descrição não Informada!");
+        return ;
+    }else if(dataTerminoTarefa.value === ""){
+        dataTerminoTarefa.value = "";
+        alert("Data de Término não Informada!");
+        return ;
+    }else if(prioridadeTarefa.value === ""){
+        prioridadeTarefa.value = "";
+        alert("Prioridade não Informada!");
+        return ;
+    }else if(prioridadeTarefa.value < 1 || prioridadeTarefa.value > 5){
         prioridadeTarefa.value = "";
         alert("Prioridade Inválida!");
+        return ;
+    } else if(categoriaTarefa.value === ""){
+        categoriaTarefa.value = "";
+        alert("Categoria não Informada!");
+        return ;
+    }else if(statusTarefa.value === ""){
+        statusTarefa.value = "";
+        alert("Status não Informado!");
         return ;
     }
 
@@ -53,6 +78,7 @@ function criarTarefa(){
     console.log(tarefa);
 
     limparCampos();
+    listarTarefa();
 
 }
 
@@ -91,12 +117,11 @@ function listarUmaTarefa(){
    
     while(x < tarefa.length){
         while(y < 6){
-            if(tarefa[x][y] == nome){
+            if(tarefa[x][y] === nome){
                 
                 limparCampos();
 
-                saida += `<div class="tarefa_dados"><div id="nome"><p>${tarefa[x][0]}</p></div><div id="descricao"><p>${tarefa[x][1]}</p></div><div id="dataTermino"><p>${tarefa[x][2]}</p></div><div id="prioridade"><p>${tarefa[x][3]}</p></div><div id="categoria"><p>${tarefa[x][4]}</p></div><div id="status"><p>${tarefa[x][5]}</p></div></div>` 
-               
+                saida += `<div class="tarefa_dados"><div id="nome"><p>${tarefa[x][0]}</p></div><div id="descricao"><p>${tarefa[x][1]}</p></div><div id="dataTermino"><p>${tarefa[x][2]}</p></div><div id="prioridade"><p>${tarefa[x][3]}</p></div><div id="categoria"><p>${tarefa[x][4]}</p></div><div id="status"><p>${tarefa[x][5]}</p></div></div>`
                 listaTarefa.innerHTML = saida;
 
             }
@@ -109,53 +134,49 @@ function listarUmaTarefa(){
 }
 
 function modificarTarefa(){
-    
+
+    let valor = Boolean(false);
 
     let nome = prompt("Digite o nome da tarefa!");
-
-    let saida = "";
-    let x = 0, y = 0, z = 0;
+    let x = 0, z = 0;
    
     while(x < tarefa.length){
-        while(y < 6){
-            if(tarefa[x][y] === nome){
-                
-                limparCampos();
-
-                saida += `<div class="tarefa_dados"><div id="nome"><p>${tarefa[x][0]}</p></div><div id="descricao"><p>${tarefa[x][1]}</p></div><div id="dataTermino"><p>${tarefa[x][2]}</p></div><div id="prioridade"><p>${tarefa[x][3]}</p></div><div id="categoria"><p>${tarefa[x][4]}</p></div><div id="status"><p>${tarefa[x][5]}</p></div></div>` 
-                listaTarefa.innerHTML = saida;
-                
-                z = x;
-                
-
-            }
-            y = y + 6;
-           
+        if(tarefa[x][0] === nome){
+            z = x;
+            valor = true;
+            break;
         }
         x++;
-        y = 0;
     }
 
-    let novoNome = prompt("New Nome!");
-    let novaDescricao = prompt("New Descrição!");
-    let novaDataTermino = prompt("New Data de Término!");
-    let novaPrioridade = prompt("New Prioridade!");
-    let novaCategoria = prompt("New Categoria!");
-    let novoStatus = prompt("New Status!");
+    if(valor === true) {
+        let novoNome = prompt("New Nome!");
+        let novaDescricao = prompt("New Descrição!");
+        let novaDataTermino = prompt("New Data de Término!");
+        let novaPrioridade = prompt("New Prioridade!");
+        let novaCategoria = prompt("New Categoria!");
+        let novoStatus = prompt("New Status!");
 
-    tarefa[z][0] = novoNome;
-    tarefa[z][1] = novaDescricao;
-    tarefa[z][2] = novaDataTermino;
-    tarefa[z][3] = novaPrioridade;
-    tarefa[z][4] = novaCategoria;
-    tarefa[z][5] = novoStatus;
+        tarefa[z][0] = novoNome;
+        tarefa[z][1] = novaDescricao;
+        tarefa[z][2] = novaDataTermino;
+        tarefa[z][3] = novaPrioridade;
+        tarefa[z][4] = novaCategoria;
+        tarefa[z][5] = novoStatus;
 
-    listaTarefa.innerHTML = "";
+        listaTarefa.innerHTML = "";
 
-    saida += `<div class="tarefa_dados"><div id="nome"><p>${tarefa[z][0]}</p></div><div id="descricao"><p>${tarefa[z][1]}</p></div><div id="dataTermino"><p>${tarefa[z][2]}</p></div><div id="prioridade"><p>${tarefa[z][3]}</p></div><div id="categoria"><p>${tarefa[z][4]}</p></div><div id="status"><p>${tarefa[z][5]}</p></div></div>` 
-    listaTarefa.innerHTML = saida;
+        listarTarefa();
 
-    alert("Tarefa Alterada com Sucesso!");
+        alert("Tarefa Alterada com Sucesso!");
+    }else {
+        alert("Tarefa Inexistente!")
+        modificarTarefa();
+    }
+
+}
+
+function Validar(){
 
 }
 
