@@ -25,6 +25,12 @@ botaoModificar.addEventListener('click', () => modificarTarefa());
 
 let tarefa = [];
 
+let data = new Date();
+let dia = String(data. getDate()). padStart(2, '0');
+let mes = String(data. getMonth() + 1). padStart(2, '0');
+let ano = data. getFullYear();
+let dataAtual = dia + '/' + mes + '/' + ano;
+
 function criarTarefa(){
 
     let x = 0;
@@ -54,11 +60,24 @@ function criarTarefa(){
         dataTerminoTarefa.value = "";
         alert("Data de Término não Informada!");
         return ;
+    }else if(!dataTerminoTarefa.value.match(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/)){
+        dataTerminoTarefa.value = "";
+        alert("Data Inválida utilizar DD/MM/AAAA!");
+        return ;
+    }
+    
+    let partesData = dataTerminoTarefa.value.split("/");
+    let data1 = new Date(partesData[2], partesData[1] - 1, partesData[0]);
+    
+    if(data > data1){
+        dataTerminoTarefa.value = "";
+        alert(`Data deve ser maior do que a data atual ${dataAtual}!`);
+        return ;
     }else if(prioridadeTarefa.value === ""){
         prioridadeTarefa.value = "";
         alert("Prioridade não Informada!");
         return ;
-    }else if(prioridadeTarefa.value < 1 || prioridadeTarefa.value > 5){
+    }else if(!prioridadeTarefa.value.match(/\b([1-5]{1})\b/gi)){
         prioridadeTarefa.value = "";
         alert("Prioridade Inválida!");
         return ;
