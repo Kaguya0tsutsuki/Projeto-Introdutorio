@@ -1,0 +1,5 @@
+task minhaPrimeiraTask {
+    group 'tasks pessoais'
+    description 'testes de primeiro contato com o Gradle'
+    print 'Rodando minha primeira task'
+}
