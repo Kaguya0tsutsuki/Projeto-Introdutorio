@@ -4,6 +4,6 @@
 
 ## Executando o Programa
 
-- Para executar o programa ir em olx/src/main/groovy/main e executar a pasta "Main"
+- Para executar o programa ir em app/src/main/groovy/main e executar a pasta "Main"
 
 OBS: Para este programa foi utilizado o Jsoup

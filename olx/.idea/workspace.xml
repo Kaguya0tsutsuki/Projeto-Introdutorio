@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be6281fa-9d88-4c9b-82f8-e8565d6c2ff6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/groovy/main/CriarFile.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/groovy/main/Olx.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/groovy/main/OlxClass.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/groovy/main/Valor.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/groovy/com/quartz/App.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/groovy/main/Main.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/groovy/com/quartz/OlxData.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/groovy/com/quartz/AppTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/olxScrapper.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +40,7 @@
     </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -174,6 +184,19 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ZG-OlxScrapper" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ZG-OlxScrapper" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
@@ -196,7 +219,6 @@
       <workItem from="1652601276137" duration="481000" />
       <workItem from="1653146923685" duration="327000" />
       <workItem from="1653147903438" duration="3394000" />
-      <workItem from="1653156381420" duration="34000" />
     </task>
     <servers />
   </component>
